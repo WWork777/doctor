@@ -1,0 +1,33 @@
+
+
+/* Сброс базовых отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color:#EEEEEE;
+  color: #29271F;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Основная область */
+.main {
+  min-height: 80vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+button {
+  cursor: pointer;
+}
