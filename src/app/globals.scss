@@ -11,8 +11,9 @@ body {
   font-family: "Inter", sans-serif;
   background-color:#EEEEEE;
   color: #29271F;
-  overflow-x: hidden;
+  overflow-x: clip !important;
   width: 100vw;
+
 }
 
 /* Контейнер */
@@ -26,7 +27,7 @@ body {
 .main {
   min-height: 80vh;
   padding-top: 20px;
-  padding-bottom: 40px;
+
 }
 button {
   cursor: pointer;

@@ -1,0 +1,113 @@
+.section {
+  padding-block: clamp(24px, 5vw, 48px);
+  font-family: var(--font-wix);
+}
+
+/* крошки тянутся на ширину страницы, как и хедер/футер */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding-block: clamp(8px, 1.8vw, 12px);
+  padding-inline: clamp(16px, 6vw, 90px);
+  margin-inline: auto;
+}
+
+.breadcrumbLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  color: #31402f;
+  text-decoration: none;
+  opacity: .95;
+
+  border: 1px solid rgba(49,64,47,.2);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #f7faf6;
+
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease, border-color .18s ease;
+}
+.breadcrumbLink:hover,
+.breadcrumbLink:focus-visible {
+  opacity: 1;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  border-color: rgba(49,64,47,.3);
+  outline: none;
+}
+.breadcrumbIcon { line-height: 0; display: inline-grid; place-items: center; }
+
+.sep {
+  color: #6b7669;
+  font-size: 12px;
+  opacity: .9;
+}
+
+.current {
+  font-size: 12px;
+  color: #6b7669;
+  opacity: .95;
+}
+
+.container {
+  margin-inline: auto;
+  margin-block: clamp(10px, 2vw, 20px);
+  padding-inline: clamp(16px, 6vw, 90px);
+  max-width: 1200px;
+}
+
+.h1 {
+  margin: 0 0 8px;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #1e1e1e;
+}
+
+.muted {
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: #6b7669;
+}
+
+.h2 {
+  margin: 22px 0 10px;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+/* типографика только внутри локального контейнера */
+.content p {
+  margin: 0 0 10px;
+  color: #4b4b4b;
+  line-height: 1.65;
+  font-size: 16px;
+}
+.content .list {
+  margin: 0 0 10px 18px;
+  padding: 0;
+  color: #4b4b4b;
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+.note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f3f6f2;
+  color: #31402f;
+  border: 1px solid rgba(49, 64, 47, 0.2);
+}
+
+/* компактнее на узких экранах */
+@media (max-width: 520px) {
+  .container { padding-inline: 16px; }
+  .content p,
+  .content .list { font-size: 15px; }
+}

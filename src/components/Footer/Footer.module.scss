@@ -1,0 +1,76 @@
+.footer {
+  background: #31402f;
+  color: #fff;
+  font-family: var(--font-wix);
+  padding-block: clamp(16px, 3.5vw, 28px);
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: clamp(16px, 6vw, 90px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: clamp(12px, 3vw, 24px);
+}
+
+/* левый столбец с вертикальными ссылками */
+.nav {
+  display: grid;
+  gap: 8px;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .95;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.nav a:hover,
+.nav a:focus-visible {
+  opacity: 1;
+  transform: translateX(2px);
+  outline: none;
+}
+
+/* правая колонка */
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.policy {
+  color: #e8efe6;
+  text-decoration: none;
+  font-size: 12px;
+  opacity: .9;
+  transition: opacity .2s ease, text-decoration-color .2s ease;
+}
+.policy:hover,
+.policy:focus-visible {
+  opacity: 1;
+  text-decoration: underline;
+  text-decoration-color: rgba(232,239,230,.9);
+  outline: none;
+}
+
+/* разделитель (опционально) */
+.footer::before {
+  content: "";
+  display: block;
+  inline-size: 100%;
+  block-size: 0px; /* если нужен тонкий разделитель, поставь 1px и цвет ниже */
+  background: rgba(255,255,255,.08);
+}
+
+/* адаптив */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .meta {
+    justify-content: start;
+  }
+}

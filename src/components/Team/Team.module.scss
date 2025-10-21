@@ -1,0 +1,82 @@
+.familySection {
+  position: relative;      /* обязательно */
+  overflow: hidden;        /* обрезает всё, что выходит за блок */
+  /* вместо фиксированной высоты — плавная: 200 → 400 */
+  min-height: clamp(200px, 28vw, 400px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: var(--font-wix);
+  border-radius: 4px;
+
+  /* защита от горизонтального скролла */
+  max-width: 100%;
+}
+
+/* фон как абсолютный слой внутри секции */
+.background {
+  position: absolute;   /* был fixed -> оставляем absolute */
+  inset: 0;             /* top:0; right:0; bottom:0; left:0; */
+  background-image: url('/images/fon1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;          /* позади контента секции */
+
+  /* микрофиксы производительности */
+  transform: translateZ(0);
+  will-change: transform;
+
+}
+
+/* оверлей и текст */
+.overlay {
+    display: flex;
+    flex-direction: column;
+  position: relative;   /* чтобы текст оставался поверх .background */
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* как в Hero: плавные внутренние отступы */
+  padding-block: clamp(12px, 3vw, 40px);
+  padding-inline: clamp(16px, 6vw, 90px);
+
+
+  hr {
+    width: clamp(60%, 40vw, 50%);
+    color: #ffffff;
+    margin: clamp(10px, 2vw, 20px) auto;
+    border: 1px solid #ffffff;
+  }
+}
+
+.overlay p {
+    
+  color: #fff;
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.5;
+  margin: 0;
+  /* чтобы строки не растягивались сверх меры на больших экранах */
+  max-width: 1200px;
+}
+
+/* брейкпоинты синхронизированы с остальными секциями */
+@media (max-width: 900px) {
+  .overlay {
+    padding-block: clamp(10px, 3.2vw, 20px);
+    padding-inline: clamp(18px, 6vw, 40px);
+  }
+}
+
+@media (max-width: 520px) {
+  .overlay { padding: 10px 16px; }
+  .overlay hr { width: 80%; }
+}

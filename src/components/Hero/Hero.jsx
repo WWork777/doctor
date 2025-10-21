@@ -3,14 +3,25 @@ import styles from './Hero.module.scss';
 export default function Hero() {
   return (
     <section className={styles.hero}>
+      {/* Хедер прямо в Hero */}
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <ul>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#reviews">Отзывы</a></li>
+            <li><a href="#consultation">Консультации</a></li>
+          </ul>
+        </nav>
+      </header>
+
       <div className={styles.content}>
         <h1>
-          Кирокосьян Марселла <br />Артуровна
+          Кирокосьян Марселла <br /> Артуровна
         </h1>
         <h2>
-          Врач нейрохирург <br />с огромным стажем работы
+          Врач нейрохирург <br /> с огромным стажем работы
         </h2>
-        <hr></hr>
+        <hr />
         <h3>
           Всю свою жизнь я занимаюсь<br /> лечением следующих заболеваний:
         </h3>
@@ -24,10 +35,10 @@ export default function Hero() {
           <li>Аневризмы</li>
           <li>Травмы спинного и головного мозга</li>
         </ul>
-      
       </div>
+
       <div className={styles.image}>
-        <img src='/images/doctor.webp' alt='Врач' />
+        <img src="/images/doctor.webp" alt="Врач" />
       </div>
     </section>
   );

@@ -1,0 +1,100 @@
+.about {
+  padding-block: clamp(24px, 5vw, 48px);
+  font-family: var(--font-wix);
+}
+
+.container {
+  /* как в Hero: общий «полевой» отступ страницы */
+  padding-inline: clamp(16px, 6vw, 90px);
+  margin-inline: auto;
+  margin-block: clamp(10px, 2vw, 20px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  align-items: start;
+  gap: clamp(16px, 3vw, 28px);
+
+  hr {
+    inline-size: clamp(40%, 20vw, 20%);
+    border: 1px solid #31402F;
+    margin: 0 0 10px;
+    color: #31402F;
+  }
+}
+
+/* типографика */
+.eyebrow {
+  font-size: clamp(12px, 1.6vw, 14px);
+  color: #6b7669;
+  margin-bottom: 8px;
+}
+.lead {
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 700;
+  color: #1e1e1e;
+  margin: 0 0 14px;
+  line-height: 1.45;
+}
+.p,
+.p2 {
+  color: #4b4b4b;
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+.p { font-weight: 700; }
+
+/* галерея справа */
+.pills {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  justify-content: start;
+  align-items: center;
+  gap: clamp(10px, 2vw, 16px);
+}
+
+.pill {
+  inline-size: 243px;
+  block-size: clamp(360px, 45vw, 653px);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+.pill img { inline-size: 100%; block-size: 100%; object-fit: cover; display: block; }
+
+/* 900 — мобильная мозаика */
+@media (max-width: 1500px) {
+  .grid { grid-template-columns: 1fr; gap: 16px; }
+
+  .container { padding-inline: clamp(16px, 6vw, 90px); }
+
+  .grid hr {
+    inline-size: 80%;
+    margin-inline: auto;
+  }
+
+  /* мозаика: a b / a c */
+  .pills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a b"
+      "a c";
+    gap: 12px;
+    align-items: stretch;
+  }
+  .pill { inline-size: 100%; border-radius: 28px; overflow: hidden; }
+
+  .pills .pill:nth-child(1) { grid-area: a; block-size: 360px; }
+  .pills .pill:nth-child(2) { grid-area: b; block-size: 170px; }
+  .pills .pill:nth-child(3) { grid-area: c; block-size: 170px; }
+}
+
+/* 520 — компактнее */
+@media (max-width: 520px) {
+  .pills .pill:nth-child(1) { block-size: 300px; }
+  .pills .pill:nth-child(2),
+  .pills .pill:nth-child(3) { block-size: 150px; }
+}

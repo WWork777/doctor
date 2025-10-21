@@ -1,5 +1,6 @@
 import './globals.scss';
 import { Wix_Madefor_Display, Inter, TikTok_Sans } from 'next/font/google';
+import Footer from '@/components/Footer/Footer';
 
 
 const wixMadefor = Wix_Madefor_Display({
@@ -35,10 +36,11 @@ export default function RootLayout({ children }) {
       className={`${wixMadefor.variable} ${tikTokSans.variable} ${inter.variable}`}
     >
       <body>
-        
+        {/* <Header/> */}
         <main className='main'>
           <div>{children}</div>
         </main>
+            <Footer />
       </body>
     </html>
   );

@@ -1,0 +1,75 @@
+.familySection {
+  position: relative;
+  overflow: hidden;
+  /* вместо жёстких 275px — плавная высота: 140 → 275 */
+  min-height: clamp(140px, 24vw, 275px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: var(--font-wix);
+  border-radius: 4px;
+
+  /* подстрахуемся от горизонтального скролла */
+  max-width: 100%;
+}
+
+/* фон как абсолютный слой */
+.background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/images/fon1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+
+  /* микрофиксы производительности */
+  transform: translateZ(0);
+  will-change: transform;
+
+  /* ретина-изображение, если есть (не обязательно) */
+
+}
+
+/* полупрозрачный слой + текст */
+.overlay {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* как в Hero: внутренние поля текут */
+  padding: clamp(12px, 3vw, 40px) clamp(16px, 6vw, 90px);
+
+  /* чуть усилить контраст текста */
+
+}
+
+.overlay p {
+  color: #fff;
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.5;
+  margin: 0;
+
+  /* чтобы строки не растягивались слишком широко на больших экранах */
+  max-width: 1200px;
+}
+
+/* брейкпоинты (совпадают с остальными секциями) */
+@media (max-width: 900px) {
+  .overlay { padding: clamp(10px, 3.2vw, 20px) clamp(18px, 6vw, 40px); }
+}
+
+@media (max-width: 520px) {
+  .overlay { padding: 10px 16px; }
+}
