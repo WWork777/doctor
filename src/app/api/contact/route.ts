@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     });
 
     // письмо
-    const to = "sersur42@yandex.ru";
+    const to = "kirdoc55@mail.ru";
     const from = "sersur42@yandex.ru";
 
     const subject = `Заявка с сайта: ${name}`;
