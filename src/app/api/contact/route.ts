@@ -21,18 +21,18 @@ export async function POST(req: NextRequest) {
 
     // SMTP транспорт
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: Number(process.env.SMTP_PORT) === 465, // true для 465, иначе false
+      host: "smtp.yandex.ru",
+      port: 465,
+      secure: 465, // true для 465, иначе false
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: "sersur42@yandex.ru",
+        pass: "xidetvxcflvenyqk",
       },
     });
 
     // письмо
-    const to = process.env.MAIL_TO || process.env.SMTP_USER!;
-    const from = process.env.MAIL_FROM || `"Site Form" <${process.env.SMTP_USER}>`;
+    const to = "sersur42@yandex.ru";
+    const from = "sersur42@yandex.ru";
 
     const subject = `Заявка с сайта: ${name}`;
     const text = [
