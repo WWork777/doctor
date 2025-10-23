@@ -1,5 +1,3 @@
-
-
 /* Сброс базовых отступов */
 * {
   margin: 0;
@@ -9,11 +7,10 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color:#EEEEEE;
-  color: #29271F;
+  background-color: #eeeeee;
+  color: #29271f;
   overflow-x: clip !important;
   width: 100vw;
-
 }
 
 /* Контейнер */
@@ -27,7 +24,6 @@ body {
 .main {
   min-height: 80vh;
   padding-top: 20px;
-
 }
 button {
   cursor: pointer;

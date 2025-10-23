@@ -1,4 +1,4 @@
-import styles from './Hero.module.scss';
+import styles from "./Hero.module.scss";
 
 export default function Hero() {
   return (
@@ -7,9 +7,15 @@ export default function Hero() {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <ul>
-            <li><a href="#about">Обо мне</a></li>
-            <li><a href="#reviews">Отзывы</a></li>
-            <li><a href="#consultation">Консультации</a></li>
+            <li>
+              <a href="#about">Обо мне</a>
+            </li>
+            <li>
+              <a href="#reviews">Отзывы</a>
+            </li>
+            <li>
+              <a href="#consultation">Консультации</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -23,11 +29,14 @@ export default function Hero() {
         </h2>
         <hr />
         <h3>
-          Всю свою жизнь я занимаюсь<br /> лечением следующих заболеваний:
+          Всю свою жизнь я занимаюсь
+          <br /> лечением следующих заболеваний:
         </h3>
         <ul>
           <li>Инсульты</li>
-          <li>Переломы и кровоизлияния, затрагивающие спинной и головной мозг</li>
+          <li>
+            Переломы и кровоизлияния, затрагивающие спинной и головной мозг
+          </li>
           <li>Патологии периферической и центральной нервной системы</li>
           <li>Воспалительные процессы оболочек головного мозга</li>
           <li>Неврологические синдромы</li>

@@ -8,12 +8,11 @@
   grid-template-areas:
     "header image"
     "content image";
-  column-gap: clamp(20px, 5vw, 80px);
   row-gap: clamp(12px, 2.5vw, 24px);
 
   /* Отступы: слева 0 — чтобы хедер касался края; справа/сверху/снизу — плавные */
   padding-top: clamp(16px, 4vw, 48px);
-  padding-right: clamp(16px, 6vw, 90px);
+  padding-right: clamp(16px, 10vw, 200px);
   padding-bottom: clamp(16px, 4vw, 48px);
   padding-left: 0;
 
@@ -39,23 +38,22 @@
 /* ---- Header (в одной линии с фото) ---- */
 .header {
   grid-area: header;
-  justify-self: start;        /* прижимаем к левому краю колонки/экрана */
-  background-color: #31402F;
+  justify-self: start; /* прижимаем к левому краю колонки/экрана */
+  background-color: #31402f;
   color: #ffffff;
-  display: inline-flex;       /* ширина по содержимому */
+  display: inline-flex; /* ширина по содержимому */
   align-items: center;
   justify-content: end;
-  gap: clamp(12px, 2vw, 20px);
   width: 80%;
-  padding: clamp(10px, 2.2vw, 18px) clamp(12px, 2.2vw, 22px);
-  
-  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  padding: clamp(10px, 2.2vw, 40px) clamp(12px, 2.2vw, 22px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 900px) {
   .header {
     justify-content: center;
-    justify-self: center;     /* на мобиле — по центру */
+    justify-self: center; /* на мобиле — по центру */
     width: auto;
     border-radius: 8px;
   }
@@ -63,7 +61,7 @@
 
 .nav ul {
   display: flex;
-  gap: clamp(12px, 2vw, 20px);
+  gap: clamp(12px, 2vw, 70px);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -71,11 +69,13 @@
 .nav a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: 500;
-  font-size: clamp(14px, 1.6vw, 15px);
+  font-weight: 400;
+  font-size: clamp(14px, 1.6vw, 18px);
   transition: color 0.2s ease;
 }
-.nav a:hover { color: #C5D0C2; }
+.nav a:hover {
+  color: #c5d0c2;
+}
 
 /* ---- Блок с фото (на одной линии с хедером) ---- */
 .image {
@@ -84,12 +84,12 @@
   justify-content: start;
 
   /* компенсируем нулевой padding-left у .hero, чтобы фото стояло ровно с контентом */
-  padding-left: clamp(16px, 6vw, 90px);
+  padding-left: clamp(16px, 10vw, 150px);
 }
 @media (max-width: 900px) {
   .image {
     justify-content: center;
-    padding-left: 0;          /* на мобиле общий левый паддинг .hero уже вернули */
+    padding-left: 0; /* на мобиле общий левый паддинг .hero уже вернули */
   }
 }
 .image img {
@@ -98,24 +98,38 @@
   height: auto;
   border-radius: 999px;
   object-fit: cover;
-  box-shadow: 0 12px 36px rgba(0,0,0,.18);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
 }
-@media (max-width: 1200px) { .image img { width: min(44vw, 520px); } }
-@media (max-width: 900px)  { .image img { width: min(72vw, 420px); } }
-@media (max-width: 520px)  { .image img { width: min(78vw, 340px); } }
+@media (max-width: 1200px) {
+  .image img {
+    width: min(44vw, 520px);
+  }
+}
+@media (max-width: 900px) {
+  .image img {
+    width: min(72vw, 420px);
+  }
+}
+@media (max-width: 520px) {
+  .image img {
+    width: min(78vw, 340px);
+  }
+}
 
 /* ---- Контент (идёт под хедером) ---- */
 .content {
   grid-area: content;
   line-height: 1.25;
-  max-width: 780px;
+  max-width: 1000px;
   text-align: left;
 
   /* такой же левый внутренний отступ, как у фото — для выравнивания поля страницы */
-  padding-left: clamp(16px, 6vw, 90px);
+  padding-left: clamp(16px, 10vw, 200px);
 }
 @media (max-width: 900px) {
-  .content { padding-left: 0; }
+  .content {
+    padding-left: 0;
+  }
 }
 
 .content h1 {
@@ -145,21 +159,24 @@
 }
 .content li {
   font-size: clamp(13px, 1.4vw, 16px);
-  margin: 0 0 8px;
   line-height: 1.45;
 }
 .content li:before {
   content: "∎";
   font-size: 150%;
-  color: #31402F;
+  color: #31402f;
   margin-right: 8px;
 }
 
 .content hr {
   width: clamp(60%, 40vw, 50%);
-  border: 1px solid #31402F;
+  border: 1px solid #31402f;
   margin: 0 0 10px;
 }
 @media (max-width: 900px) {
-  .content hr { width: 80%; margin-left: auto; margin-right: auto; }
+  .content hr {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

@@ -9,11 +9,17 @@ export async function POST(req: NextRequest) {
 
     // простая валидация
     if (!name || !email) {
-      return NextResponse.json({ error: "Имя и email обязательны" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Имя и email обязательны" },
+        { status: 400 }
+      );
     }
     const msg = (message || "").toString();
     if (msg.length > 5000) {
-      return NextResponse.json({ error: "Сообщение слишком длинное" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Сообщение слишком длинное" },
+        { status: 400 }
+      );
     }
 
     // антиспам: простая проверка частоты (опционально через headers)
@@ -48,7 +54,9 @@ export async function POST(req: NextRequest) {
         <p><b>Имя:</b> ${escapeHtml(name)}</p>
         <p><b>Email:</b> ${escapeHtml(email)}</p>
         <p><b>Сообщение:</b></p>
-        <pre style="white-space:pre-wrap;margin:0;background:#f6f6f6;padding:12px;border-radius:8px">${escapeHtml(msg || "")}</pre>
+        <pre style="white-space:pre-wrap;margin:0;background:#f6f6f6;padding:12px;border-radius:8px">${escapeHtml(
+          msg || ""
+        )}</pre>
       </div>
     `;
 
@@ -57,7 +65,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (err: any) {
     console.error("CONTACT_FORM_ERROR:", err);
-    return NextResponse.json({ error: "Ошибка отправки письма" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Ошибка отправки письма" },
+      { status: 500 }
+    );
   }
 }
 

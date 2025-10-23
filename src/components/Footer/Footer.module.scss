@@ -7,7 +7,7 @@
 
 .container {
   margin-inline: auto;
-  padding-inline: clamp(16px, 6vw, 90px);
+  padding-inline: clamp(16px, 10vw, 200px);
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: start;
@@ -22,10 +22,10 @@
 .nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.4;
-  opacity: .95;
-  transition: opacity .2s ease, transform .2s ease;
+  opacity: 0.95;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .nav a:hover,
 .nav a:focus-visible {
@@ -43,15 +43,15 @@
 .policy {
   color: #e8efe6;
   text-decoration: none;
-  font-size: 12px;
-  opacity: .9;
-  transition: opacity .2s ease, text-decoration-color .2s ease;
+  font-size: 16px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
 }
 .policy:hover,
 .policy:focus-visible {
   opacity: 1;
   text-decoration: underline;
-  text-decoration-color: rgba(232,239,230,.9);
+  text-decoration-color: rgba(232, 239, 230, 0.9);
   outline: none;
 }
 
@@ -61,7 +61,7 @@
   display: block;
   inline-size: 100%;
   block-size: 0px; /* если нужен тонкий разделитель, поставь 1px и цвет ниже */
-  background: rgba(255,255,255,.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* адаптив */

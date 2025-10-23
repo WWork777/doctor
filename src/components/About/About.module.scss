@@ -5,7 +5,7 @@
 
 .container {
   /* как в Hero: общий «полевой» отступ страницы */
-  padding-inline: clamp(16px, 6vw, 90px);
+  padding-inline: clamp(16px, 10vw, 200px);
   margin-inline: auto;
   margin-block: clamp(10px, 2vw, 20px);
 }
@@ -18,20 +18,20 @@
 
   hr {
     inline-size: clamp(40%, 20vw, 20%);
-    border: 1px solid #31402F;
+    border: 1px solid #31402f;
     margin: 0 0 10px;
-    color: #31402F;
+    color: #31402f;
   }
 }
 
 /* типографика */
 .eyebrow {
-  font-size: clamp(12px, 1.6vw, 14px);
+  font-size: clamp(20px, 1.6vw, 24px);
   color: #6b7669;
   margin-bottom: 8px;
 }
 .lead {
-  font-size: clamp(16px, 2.2vw, 18px);
+  font-size: clamp(16px, 2.2vw, 24px);
   font-weight: 700;
   color: #1e1e1e;
   margin: 0 0 14px;
@@ -43,7 +43,15 @@
   margin: 0 0 10px;
   line-height: 1.6;
 }
-.p { font-weight: 700; }
+.p {
+  font-weight: 700;
+  font-size: clamp(16px, 2.2vw, 18px);
+}
+
+.p2 {
+  font-weight: 400;
+  font-size: clamp(16px, 2.2vw, 18px);
+}
 
 /* галерея справа */
 .pills {
@@ -59,16 +67,26 @@
   inline-size: 243px;
   block-size: clamp(360px, 45vw, 653px);
   border-radius: 999px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
   overflow: hidden;
 }
-.pill img { inline-size: 100%; block-size: 100%; object-fit: cover; display: block; }
+.pill img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* 900 — мобильная мозаика */
 @media (max-width: 1500px) {
-  .grid { grid-template-columns: 1fr; gap: 16px; }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
-  .container { padding-inline: clamp(16px, 6vw, 90px); }
+  .container {
+    padding-inline: clamp(16px, 6vw, 90px);
+  }
 
   .grid hr {
     inline-size: 80%;
@@ -85,16 +103,33 @@
     gap: 12px;
     align-items: stretch;
   }
-  .pill { inline-size: 100%; border-radius: 28px; overflow: hidden; }
+  .pill {
+    inline-size: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+  }
 
-  .pills .pill:nth-child(1) { grid-area: a; block-size: 360px; }
-  .pills .pill:nth-child(2) { grid-area: b; block-size: 170px; }
-  .pills .pill:nth-child(3) { grid-area: c; block-size: 170px; }
+  .pills .pill:nth-child(1) {
+    grid-area: a;
+    block-size: 360px;
+  }
+  .pills .pill:nth-child(2) {
+    grid-area: b;
+    block-size: 170px;
+  }
+  .pills .pill:nth-child(3) {
+    grid-area: c;
+    block-size: 170px;
+  }
 }
 
 /* 520 — компактнее */
 @media (max-width: 520px) {
-  .pills .pill:nth-child(1) { block-size: 300px; }
+  .pills .pill:nth-child(1) {
+    block-size: 300px;
+  }
   .pills .pill:nth-child(2),
-  .pills .pill:nth-child(3) { block-size: 150px; }
+  .pills .pill:nth-child(3) {
+    block-size: 150px;
+  }
 }
