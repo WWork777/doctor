@@ -48,12 +48,7 @@
   /* компенсируем нулевой padding-left у .hero, чтобы фото стояло ровно с контентом */
   padding-left: clamp(16px, 10vw, 150px);
 }
-@media (max-width: 900px) {
-  .image {
-    justify-content: center;
-    padding-left: 0; /* на мобиле общий левый паддинг .hero уже вернули */
-  }
-}
+
 .image img {
   width: min(38vw, 611px);
   aspect-ratio: 3 / 4;
@@ -62,6 +57,8 @@
   object-fit: cover;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
 }
+
+
 @media (max-width: 1200px) {
   .image img {
     width: min(44vw, 520px);
@@ -70,6 +67,10 @@
 @media (max-width: 900px) {
   .image img {
     width: min(72vw, 420px);
+  }
+  .image {
+    justify-content: center;
+    padding-left: 0; /* на мобиле общий левый паддинг .hero уже вернули */
   }
 }
 @media (max-width: 520px) {
@@ -99,15 +100,38 @@
 .content h1 {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial;
   font-weight: 900;
-  font-size: clamp(28px, 6vw, 64px);
+  font-size: 64px;
   letter-spacing: -0.02em;
   margin: 0 0 clamp(8px, 1.5vw, 12px);
 }
+
 
 .content h2 {
   font-weight: 400;
   font-size: clamp(20px, 4vw, 48px);
   margin: 0 0 clamp(10px, 2vw, 14px);
+}
+
+@media (max-width: 1840px) {
+  .content h1{
+    font-size: clamp(28px, 5vw, 40px);
+  }
+  .content h2 {
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0 0 clamp(10px, 2vw, 14px);
+  }
+}
+
+@media (max-width: 1340px) {
+  .content h1{
+    font-size: clamp(28px, 5vw, 30px);
+  }
+  .content h2 {
+    font-weight: 400;
+    font-size: 25px;
+    margin: 0 0 clamp(10px, 2vw, 14px);
+  }
 }
 
 .content h3 {
