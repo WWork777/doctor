@@ -67,9 +67,9 @@
 
 /* брейкпоинты (совпадают с остальными секциями) */
 @media (max-width: 900px) {
-  .overlay { padding: clamp(10px, 3.2vw, 20px) clamp(18px, 6vw, 40px); }
+  .overlay { padding: clamp(50px, 3.2vw, 20px) clamp(50px, 6vw, 40px); }
 }
 
 @media (max-width: 520px) {
-  .overlay { padding: 10px 16px; }
+  .overlay { padding: 50px 16px; }
 }
