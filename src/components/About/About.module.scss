@@ -5,7 +5,7 @@
 
 .container {
   /* как в Hero: общий «полевой» отступ страницы */
-  padding-inline: clamp(16px, 10vw, 200px);
+  padding-inline: clamp(10px, 10vw, 200px);
   margin-inline: auto;
   margin-block: clamp(10px, 2vw, 20px);
 }
@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: 0.8fr 1fr;
   align-items: start;
-  gap: clamp(16px, 3vw, 28px);
+  gap: clamp(16px, 10vw, 130px);
 
   hr {
     inline-size: clamp(40%, 20vw, 20%);
@@ -45,12 +45,12 @@
 }
 .p {
   font-weight: 700;
-  font-size: clamp(16px, 2.2vw, 18px);
+  font-size: clamp(14px, 2.2vw, 17px);
 }
 
 .p2 {
   font-weight: 400;
-  font-size: clamp(16px, 2.2vw, 18px);
+  font-size: clamp(14px, 2.2vw, 17px);
 }
 
 /* галерея справа */
